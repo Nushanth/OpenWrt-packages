@@ -4,9 +4,8 @@ PKG_NAME:=hello-world
 PKG_VERSION:=1.0.1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/zilogic/hello_world_$(PKG_VERSION)
-PKG_SOURCE:=$(TOPDIR)/zilogic/hello_world/src
-
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/Nushanth/Source-code.git
 
 PKG_MAINTAINER:=Nushanth.S <nushanthsaravanan@gmail.com>
 
@@ -22,13 +21,6 @@ endef
 
 define Package/world-world/description
  A simple Hello World! program.
-endef
-
-define Build/Prepare
-		mkdir -p $(PKG_BUILD_DIR)
-		cp $(PKG_SOURCE)/hello.c $(PKG_BUILD_DIR)
-		patch $(PKG_BUILD_DIR)/hello.c patch/out.patch
-		$(Build/Patch)
 endef
 
 define Build/Compile
