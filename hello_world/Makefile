@@ -17,19 +17,22 @@ define Package/hello-world
   TITLE:=Hello-world 
 endef
 
-#MAINTAINER:=Nushanth.S <nushanthsaravanan@gmail.com>
-
 define Package/world-world/description
- A simple Hello World! program.
+  A simple Hello World! program.
+endef
+
+define Build/Prepare
+		$(Build/Prepare/Default)
 endef
 
 define Build/Compile
-		$(TARGET_CC) $(PKG_BUILD_DIR)/hello.c -o $(PKG_BUILD_DIR)/hello_world.o
+		$(MAKE) -C $(PKG_BUILD_DIR)/Source-code/ \
+			CC="$(TARGET_CC)"
 endef
 
 define Package/hello-world/install
 	$(INSTALL_DIR) $(1)/usr/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello_world.o $(1)/usr/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Source-code/hello.o $(1)/usr/
 endef
 
 $(eval $(call BuildPackage,hello-world))

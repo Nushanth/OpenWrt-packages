@@ -1,4 +1,11 @@
-5c5
-<         printf("Hello World\n");
----
->         printf("Hi Hello\n");
+diff --git a/hello.c b/hello.c
+index f78e399..212714a 100644
+--- a/hello.c
++++ b/hello.c
+@@ -3,5 +3,6 @@
+ int main()
+ {
+         printf("Hello World!\n");
++        printf("I'm nushanth\n");
+ 	return 0;
+ }
