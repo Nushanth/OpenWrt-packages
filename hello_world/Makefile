@@ -29,13 +29,13 @@ define Build/Prepare
 endef
 
 define Build/Compile
-		$(MAKE) -C $(PKG_BUILD_DIR)/Source-code/ \
+		$(MAKE) -C $(PKG_BUILD_DIR)/ \
 			CC="$(TARGET_CC)"
 endef
 
 define Package/hello-world/install
 	$(INSTALL_DIR) $(1)/usr/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Source-code/hello.o $(1)/usr/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello_world $(1)/usr/
 endef
 
 $(eval $(call BuildPackage,hello-world))
