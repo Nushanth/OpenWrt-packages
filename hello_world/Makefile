@@ -34,8 +34,8 @@ define Build/Compile
 endef
 
 define Package/hello-world/install
-	$(INSTALL_DIR) $(1)/usr/
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello_world $(1)/usr/
+	$(INSTALL_DIR) $(1)/usr/ns
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello_world $(1)/usr/ns
 endef
 
 $(eval $(call BuildPackage,hello-world))
