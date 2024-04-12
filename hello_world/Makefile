@@ -6,6 +6,9 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/Nushanth/Source-code.git
+PKG_SOURCE_VERSION:=fe99595b7ff98a093e398f596e66368d6aa429a3
+PKG_SOURCE_DATE:=12-4-24
+
 
 PKG_MAINTAINER:=Nushanth.S <nushanthsaravanan@gmail.com>
 
